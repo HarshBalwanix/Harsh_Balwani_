@@ -8,11 +8,16 @@ import ExamRoutes from "./routes/exam.routes.js";
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
+
+app.get("/", (req, res) => {
+  res.send("Welcome to VRV Backend by Harsh Balwani");
+});
+
 app.use("/api/user", UserRoutes);
 app.use("/api/exam", ExamRoutes);
 app.get("/api/docs", (req, res) => {
   res.redirect(
-    "https://www.postman.com/joint-operations-cosmologist-64352344/workspace/exam-system-endpoints/collection/30730048-f9511483-07ec-40e6-ad90-ae8352cb0c45?action=share&creator=30730048"
+    "https://www.postman.com/cryosat-technologist-36387445/2e9770fe-70d5-4845-9b66-520157a7c89b/collection/fq5dlen/vrv-backend"
   );
 });
 app.listen(process.env.PORT, async () => {
